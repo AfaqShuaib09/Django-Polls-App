@@ -1,17 +1,7 @@
 :root {
     --primary : #1a252f;
-    --dark : #151A33;
     --secondary: #2b55cc;
-    --info : #4d79f6;
-    --ternary : #848db3;
-    --pure : #eff2f9;
-    --fade : #7881b9;
-    --mild : #8997bd;
-    --footer : #212A4A;
-    --black : #060b1b;
-    --twitter : #4ac7ec;
-    --dribble : #ff5da0;
-    --success : #1ecab8;
+    --green : #1ecab8;
     --danger : #f1646c;
     --darkblue : #28365f;
 }
@@ -23,17 +13,21 @@ li a {
     font-size: 20px;
 }
 
+ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    color: white;
+}
+
 li {
     margin-bottom: 5px;
 }
 
 body {
-    background: linear-gradient(90deg, var(--secondary),var(--success));
+    background: linear-gradient(90deg, var(--secondary),var(--green));
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a:hover {
-    color: var(--dribble);
-}
+
 
 

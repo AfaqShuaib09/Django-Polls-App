@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Question, Choice
+from .models import Choice, Question
+
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
@@ -16,10 +17,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'pub_date', 'was_published_recently')
     list_filter = ['pub_date']
     search_fields = ['question_text']
-    # date_hierarchy = 'pub_date'
-    # fields = ['question_text', 'pub_date']
-
 
 # Register your models here.
 admin.site.register(Question, QuestionAdmin)
-# admin.site.register(Choice)
+admin.site.register(Choice)
