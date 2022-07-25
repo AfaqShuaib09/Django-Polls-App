@@ -1,0 +1,39 @@
+:root {
+    --primary : #1a252f;
+    --dark : #151A33;
+    --secondary: #2b55cc;
+    --info : #4d79f6;
+    --ternary : #848db3;
+    --pure : #eff2f9;
+    --fade : #7881b9;
+    --mild : #8997bd;
+    --footer : #212A4A;
+    --black : #060b1b;
+    --twitter : #4ac7ec;
+    --dribble : #ff5da0;
+    --success : #1ecab8;
+    --danger : #f1646c;
+    --darkblue : #28365f;
+}
+
+li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+body {
+    background: linear-gradient(90deg, var(--secondary),var(--success));
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover {
+    color: var(--dribble);
+}
+
+
