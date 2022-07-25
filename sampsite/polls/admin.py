@@ -1,3 +1,5 @@
+''' Models registration of the polls app for the django admin panel '''
+
 from django.contrib import admin
 
 from .models import Choice, Question
@@ -10,7 +12,7 @@ class ChoiceInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     ''' Question model to store and show on the polls page '''
     fieldsets = [
-        (None,               {'fields': ['question_text']}),
+        (None, {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [ChoiceInline]

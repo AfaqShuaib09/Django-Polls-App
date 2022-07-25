@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
@@ -9,33 +9,32 @@ from .models import Choice, Question
 
 # Create your views here.
 class IndexView(generic.ListView):
-    ''' Index view of the polls page '''
+    ''' Generic ListView class to display the list of questions (5 recently published questiom) '''
     template_name = 'polls/index.html'
     context_object_name = 'latest_questions_list'
 
     def get_queryset(self):
-        ''' Return the last five published questions '''
+        ''' Return the latest five published questions '''
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
-    ''' Detail view of the polls page '''
+    ''' Display the question along with the list of related choices '''
     model = Question
     template_name = 'polls/detail.html'
 
     def get_queryset(self):
-        ''' Exclude questions that aren't published yet '''
+        ''' Exclude questions that aren't published yet i.e. pub_date is in the future '''
         return Question.objects.filter(pub_date__lte=timezone.now())
 
 
 class ResultsView(generic.DetailView):
-    ''' Results view of the polls page '''
+    ''' Display the no of votes for each choice '''
     model = Question
     template_name = 'polls/results.html'
 
 
 def vote(request, question_id):
-    ''' Polls vote page '''
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])

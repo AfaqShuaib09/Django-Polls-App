@@ -1,3 +1,4 @@
+''' Models declaration related to the Polls App '''
 import datetime
 
 from django.db import models
@@ -14,7 +15,7 @@ class Question(models.Model):
         return str(self.question_text)
 
     def was_published_recently(self):
-        ''' Check if the question was published recently '''
+        ''' Check if the question was published recently within the 24 hours '''
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
@@ -31,4 +32,3 @@ class Choice(models.Model):
 
     def __str__(self):
         return str(self.choice_text)
-
