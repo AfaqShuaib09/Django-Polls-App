@@ -19,6 +19,22 @@ git clone https://github.com/AfaqShuaib09/Django-Polls-App
 cd Django-Polls-App
 ```
 
+### Create Virtual Environment
+- In the project directory, you can create a virtual environment by running the following command in the terminal:
+
+```bash
+   python3 -m venv env
+```
+- Activate the virtual environment by running the following command in the terminal:
+```bash
+   source env/bin/activate
+```
+
+- Install the dependencies by running the following command in the terminal:
+```bash
+   pip install -r requirements.txt
+```
+
 ### Run the tests
 - Run the tests (Unit tests) in tests.py of the polls directory
 
